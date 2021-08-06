@@ -1,0 +1,21 @@
+{
+  "name": "my-theme-1",
+  "displayName": "my-theme-1",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.59.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "tibi1220",
+        "uiTheme": "vs-dark",
+        "path": "./themes/tibi1220-color-theme.json"
+      }
+    ]
+  }
+}
