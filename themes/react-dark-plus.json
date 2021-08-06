@@ -15,6 +15,9 @@
   // orange: #ff8b50
   // custom orange: #ffb793
 
+  // darker bg:           #unused
+  // lighter bg:          #unused
+
   // darker yellow:       #ffc44f
   // lighter yellow:      #fff290
   // purple:              #c5a5c5
@@ -22,15 +25,15 @@
   // string orange:       #ffb793
   // punctuation green:   #88c6be
   // comment gray:        #b2b2b2
-  // tag salmon:          #fc929e
+  // tag salmon:          #ff7182     old: #fc929e
   // light variable:      #A7F3D0
   // dark variable:       #34D399
   // field name:          #caffe6
-  // JSON fields:         #
+  // JSON fields:         #66abf0
 
   "colors": {
     "editor.background": "#1E1E1E",
-    "editor.foreground": "#D4D4D4",
+    "editor.foreground": "#fff",
     "editor.inactiveSelectionBackground": "#3A3D41",
     "editorIndentGuide.background": "#404040",
     "editorIndentGuide.activeBackground": "#707070",
@@ -58,7 +61,8 @@
         "variable.language.this",
         "storage.modifier",
         "constant.language.boolean",
-        "variable.parameter"
+        "variable.parameter",
+        "entity.other.attribute-name"
       ],
       "settings": {
         "fontStyle": "italic"
@@ -66,14 +70,29 @@
     },
     {
       "name": "Bold keywords",
-      "scope": ["entity.name.type", "variable.other.constant"],
+      "scope": [
+        "entity.name.type", //
+        "variable.other.constant" //
+      ],
       "settings": {
         "fontStyle": "bold"
       }
     },
     {
+      "name": "Bold Italic Keywords",
+      "scope": ["entity.name.function"],
+      "settings": {
+        "fontStyle": ""
+      }
+    },
+    {
       "name": "Classnames and Types (Darker Yellow)",
-      "scope": ["entity.name.type", "support.type", "support.class.component"],
+      "scope": [
+        "entity.name.type",
+        "support.type",
+        "support.class.component",
+        "support.class"
+      ],
       "settings": {
         "foreground": "#ffc44f"
       }
@@ -86,7 +105,7 @@
         "support.constant",
         "variable.language.this",
         "support.variable",
-        "constant.language.python"
+        "constant.language"
       ],
       "settings": {
         "foreground": "#fff290"
@@ -94,12 +113,7 @@
     },
     {
       "name": "Keywords (Purple)",
-      "scope": [
-        "keyword.control",
-        "storage.type",
-        "storage.modifier",
-        "entity.other.attribute-name"
-      ],
+      "scope": ["keyword.control", "storage.type", "storage.modifier"],
       "settings": {
         "foreground": "#c5a5c5"
       }
@@ -141,14 +155,14 @@
       "name": "Tag (Tag Salmon)",
       "scope": ["entity.name.tag"],
       "settings": {
-        "foreground": "#fc929e"
+        "foreground": "#ff7182"
       }
     },
     {
       "name": "ReadWrite Variables (Light Variable)",
-      "scope": ["variable.other.local", "variable.parameter"],
+      "scope": ["variable.other", "variable.parameter", "variable.language"],
       "settings": {
-        "foreground": "#A7F3D0"
+        "foreground": "#a7f3d0"
       }
     },
     {
@@ -159,7 +173,7 @@
       }
     },
     {
-      "name": "Object fields",
+      "name": "Object fields (Field Name)",
       "scope": [
         "meta.object.member",
         "variable.other.property",
@@ -167,22 +181,29 @@
         "variable.other.readwrite.alias"
       ],
       "settings": {
-        "foreground": "#caffe6"
+        "foreground": "#edfff6"
       }
     },
     {
-      "name": "JSON fields",
+      "name": "JSON fields (JSON Field)",
       "scope": ["support.type.property-name"],
       "settings": {
-        "foreground": "#4fa7ff"
+        "foreground": "#66abf0"
       }
-    } /* ,
+    },
+    {
+      "name": "Other Entity Names ()",
+      "scope": ["entity.other.attribute-name"],
+      "settings": {
+        "foreground": "#c5a5c5"
+      }
+    },
     {
       "name": "white",
-      "scope": ["variable.other.readwrite.alias"],
+      "scope": [],
       "settings": {
-        "foreground": "#fff"
+        "foreground": "#ffffff"
       }
-    } */
+    }
   ]
 }

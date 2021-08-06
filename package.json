@@ -2,7 +2,7 @@
   "name": "my-theme-1",
   "displayName": "my-theme-1",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.59.0"
   },
@@ -12,9 +12,9 @@
   "contributes": {
     "themes": [
       {
-        "label": "tibi1220",
+        "label": "React Dark+ Theme",
         "uiTheme": "vs-dark",
-        "path": "./themes/tibi1220-color-theme.json"
+        "path": "./themes/react-dark-plus.json"
       }
     ]
   }
