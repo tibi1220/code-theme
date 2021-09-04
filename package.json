@@ -1,8 +1,8 @@
 {
-  "name": "my-theme-1",
-  "displayName": "my-theme-1",
-  "description": "",
-  "version": "0.1.0",
+  "name": "react-dark-plus-theme",
+  "displayName": "React Dark+ Theme",
+  "description": "A simple colorful theme based on reactjs.org",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.59.0"
   },

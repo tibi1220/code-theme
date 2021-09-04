@@ -15,23 +15,38 @@
   // orange: #ff8b50
   // custom orange: #ffb793
 
-  // darker bg:           #unused
-  // lighter bg:          #unused
+  // darker bg:           #20232a     unused
+  // lighter bg:          #282C34     unused
+  // old salmon:          #fc929e     unused
 
-  // darker yellow:       #ffc44f
-  // lighter yellow:      #fff290
-  // purple:              #c5a5c5
-  // function blue:       #79b6f2
-  // string orange:       #ffb793
-  // punctuation green:   #88c6be
-  // comment gray:        #b2b2b2
-  // tag salmon:          #ff7182     old: #fc929e
-  // light variable:      #A7F3D0
-  // dark variable:       #34D399
-  // field name:          #caffe6
-  // JSON fields:         #66abf0
+  // darker yellow:       #ffc44f     classes, types
+  // lighter yellow:      #fff290     numbers
+
+  // darker purple:       #9d90ff     booleans, null
+  // lighter purple:      #c5a5c5     keywords
+
+  // darker blue:         #4292e3
+  // normal blue:         #66abf0     JSON fields
+  // lighter blue:        #79b6f2     functions
+  // lightest blue:       #90c0ff
+
+  // darker salmon:       #ff7182     tags
+  // lighter salmon:      #ff9090     this
+  // darker orange:       #ffb793     strings
+  // lighter orange:      #ffcf90
+
+  // darkest green:       #88c6be     punctuation
+  // darker green:        #34D399     constants
+  // normal green:        #90ffb7
+  // lighter green:       #A7F3D0     variables
+  // lightest green:      #caffe6
+
+  // lime green:          #bbff90
+  // comment gray:        #b2b2b2     comments
+  // white:               #ffffff     white
 
   "colors": {
+    // dark+ default
     "editor.background": "#1E1E1E",
     "editor.foreground": "#fff",
     "editor.inactiveSelectionBackground": "#3A3D41",
@@ -51,6 +66,13 @@
     "sideBarSectionHeader.border": "#ccc3",
     "tab.lastPinnedBorder": "#ccc3",
     "list.activeSelectionIconForeground": "#FFF"
+
+    // brackets
+    // "editorBracketHighlight.foreground1": "#58d483",
+    // "editorBracketHighlight.foreground2": "#88c6be",
+    // "editorBracketHighlight.foreground3": "#53A16E"
+    // "editorBracketHighlight.foreground4": "#ffc300",
+    // "editorBracketHighlight.foreground3": "#cd8fd9",
   },
   "tokenColors": [
     {
@@ -61,8 +83,10 @@
         "variable.language.this",
         "storage.modifier",
         "constant.language.boolean",
+        "constant.language.null",
         "variable.parameter",
         "entity.other.attribute-name"
+        // "support.type.primitive"
       ],
       "settings": {
         "fontStyle": "italic"
@@ -71,7 +95,7 @@
     {
       "name": "Bold keywords",
       "scope": [
-        "entity.name.type", //
+        // "entity.name.type", //
         "variable.other.constant" //
       ],
       "settings": {
@@ -79,8 +103,12 @@
       }
     },
     {
-      "name": "Bold Italic Keywords",
-      "scope": ["entity.name.function"],
+      "name": "Regular keywords",
+      "scope": [
+        "entity.name.function",
+        "keyword.other.item.latex" // LaTeX
+        // "keyword.operator" // consider remove
+      ],
       "settings": {
         "fontStyle": ""
       }
@@ -91,20 +119,27 @@
         "entity.name.type",
         "support.type",
         "support.class.component",
-        "support.class"
+        "support.class",
+        "entity.name.namespace"
       ],
       "settings": {
         "foreground": "#ffc44f"
       }
     },
     {
-      "name": "Constants and Support Variables (Lighter Yellow)",
+      "name": "Variables (Lighter Yellow)",
       "scope": [
-        "constant.language.boolean",
-        "constant.numeric",
-        "support.constant",
-        "variable.language.this",
-        "support.variable",
+        "support.constant", //
+        "support.variable"
+      ],
+      "settings": {
+        "foreground": "#fff290"
+      }
+    },
+    {
+      "name": "Numbers and Unspecified Constants (Lighter Yellow)",
+      "scope": [
+        "constant.numeric", //
         "constant.language"
       ],
       "settings": {
@@ -112,32 +147,59 @@
       }
     },
     {
-      "name": "Keywords (Purple)",
-      "scope": ["keyword.control", "storage.type", "storage.modifier"],
+      "name": "Booleans and null Keyword (Darker Purple)",
+      "scope": [
+        "constant.language.undefined",
+        "constant.language.boolean",
+        "constant.language.null"
+      ],
+      "settings": {
+        "foreground": "#9d90ff"
+      }
+    },
+    {
+      "name": "this Keyword (Lighter Salmon)",
+      "scope": [
+        "variable.language.this" //
+      ],
+      "settings": {
+        "foreground": "#ff9090"
+      }
+    },
+    {
+      "name": "Keywords (Lighter Purple)",
+      "scope": [
+        "keyword.operator.expression.typeof",
+        "keyword.control",
+        "storage.type",
+        "storage.modifier",
+        "keyword.other.item"
+      ],
       "settings": {
         "foreground": "#c5a5c5"
       }
     },
     {
-      "name": "Functions (Function Blue)",
+      "name": "Functions (Lighter Blue)",
       "scope": ["entity.name.function", "support.function"],
       "settings": {
         "foreground": "#79b6f2"
       }
     },
     {
-      "name": "Strings (String Orange)",
+      "name": "Strings (Darker Orange)",
       "scope": ["string"],
       "settings": {
         "foreground": "#ffb793"
       }
     },
     {
-      "name": "Punctuations (Punctuation Green)",
+      "name": "Punctuations (Darkest Green)",
       "scope": [
         "punctuation",
-        "storage.type.function.arrow",
+        "punctuation.definition.list.begin.markdown",
         "punctuation.section.embedded",
+        "storage.type.function.arrow",
         "meta.brace.round"
       ],
       "settings": {
@@ -152,58 +214,70 @@
       }
     },
     {
-      "name": "Tag (Tag Salmon)",
+      "name": "Tag (Darker Salmon)",
       "scope": ["entity.name.tag"],
       "settings": {
         "foreground": "#ff7182"
       }
     },
     {
-      "name": "ReadWrite Variables (Light Variable)",
+      "name": "ReadWrite Variables (Lighter Green)",
       "scope": ["variable.other", "variable.parameter", "variable.language"],
       "settings": {
         "foreground": "#a7f3d0"
       }
     },
     {
-      "name": "ReadOnly Variables (Dark Variable)",
+      "name": "ReadOnly Variables (Darker Green)",
       "scope": ["variable.other.constant"],
       "settings": {
         "foreground": "#34D399"
       }
     },
     {
-      "name": "Object fields (Field Name)",
+      "name": "Object fields (Lightest Green)",
       "scope": [
         "meta.object.member",
         "variable.other.property",
         "support.variable.property",
-        "variable.other.readwrite.alias"
+        "variable.other.readwrite.alias",
+        "constant.language.import-export-all",
+        "variable.other.object.property"
       ],
       "settings": {
         "foreground": "#edfff6"
       }
     },
     {
-      "name": "JSON fields (JSON Field)",
+      "name": "JSON fields (Normal Blue)",
       "scope": ["support.type.property-name"],
       "settings": {
         "foreground": "#66abf0"
       }
     },
     {
-      "name": "Other Entity Names ()",
-      "scope": ["entity.other.attribute-name"],
+      "name": "Other Entity Names (Lighter)",
+      "scope": [
+        "entity.other.attribute-name", //
+        "entity.name.section"
+      ],
       "settings": {
         "foreground": "#c5a5c5"
       }
     },
     {
-      "name": "white",
+      "name": "(White)",
       "scope": [],
       "settings": {
         "foreground": "#ffffff"
       }
     }
-  ]
+  ],
+
+  "semanticTokenColors": {
+    // "newOperator": "#C586C0",
+    // "stringLiteral": "#ce9178"
+    // "customLiteral": "#DCDCAA",
+    // "numberLiteral": "#b5cea8"
+  }
 }
