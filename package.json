@@ -14,7 +14,7 @@
       {
         "label": "React Dark+ Theme",
         "uiTheme": "vs-dark",
-        "path": "./themes/react-dark-plus.json"
+        "path": "./themes/react-dark-plus.jsonc"
       }
     ]
   }
